@@ -175,7 +175,7 @@ public class ZLSwipeableView: UIView {
     
     public func loadViews() {
         if views.count<numPrefetchedViews {
-            for i in (views.count..<numPrefetchedViews) {
+            for _ in (views.count..<numPrefetchedViews) {
                 if let nextView = nextView?() {
                     nextView.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
                     views.append(nextView)

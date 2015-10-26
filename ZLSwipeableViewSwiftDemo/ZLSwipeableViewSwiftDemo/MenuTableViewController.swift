@@ -53,7 +53,7 @@ class MenuTableViewController: UITableViewController {
         return demos[indexPath.row]
     }
     func viewControllerForRowAtIndexPath(indexPath: NSIndexPath) -> ZLSwipeableViewController {
-        return viewControllers[indexPath.row]()
+        return viewControllers[indexPath.row].init()
     }
 
 }

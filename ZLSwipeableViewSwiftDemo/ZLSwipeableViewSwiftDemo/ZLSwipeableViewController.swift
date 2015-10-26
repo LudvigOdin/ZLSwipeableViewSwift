@@ -77,28 +77,28 @@ class ZLSwipeableViewController: UIViewController {
             self.swipeableView.swipeTopView(inDirection: .Down)
         }
         
-        var fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
-        var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
+        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
         
-        var items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
+        let items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
         toolbarItems = items
 
         swipeableView = ZLSwipeableView()
         view.addSubview(swipeableView)
         swipeableView.didStart = {view, location in
-            print("Did start swiping view at location: \(location)")
+            print("Did start swiping view at location: \(location)", terminator: "")
         }
         swipeableView.swiping = {view, location, translation in
-            print("Swiping at view location: \(location) translation: \(translation)")
+            print("Swiping at view location: \(location) translation: \(translation)", terminator: "")
         }
         swipeableView.didEnd = {view, location in
-            print("Did end swiping view at location: \(location)")
+            print("Did end swiping view at location: \(location)", terminator: "")
         }
         swipeableView.didSwipe = {view, direction, vector in
-            print("Did swipe view in direction: \(direction), vector: \(vector)")
+            print("Did swipe view in direction: \(direction), vector: \(vector)", terminator: "")
         }
         swipeableView.didCancel = {view in
-            print("Did cancel swiping view")
+            print("Did cancel swiping view", terminator: "")
         }
 
         swipeableView.nextView = {
